@@ -13,11 +13,14 @@ func main() {
 
 	myApp := app.New()
 	myWindow := myApp.NewWindow("Hello fyne!")
+
 	// Campo de entrada input
 	input := widget.NewEntry()
 	input.SetPlaceHolder("Ingrese su nombre")
+
 	// Mostramos el input
 	hello := widget.NewLabel("")
+
 	// Cuando hagamos clic en boton mostramos
 	send := widget.NewButton("Enviar", func() {
 		name := input.Text
@@ -28,12 +31,12 @@ func main() {
 		}
 	})
 
+	// Agregamos las opciones al contenedor
 	content := container.NewVBox(input, send, hello)
 
-	// myWindow.SetContent(widget.NewLabel("Hola mundo"))
+	// Configuramos la ventana
 	myWindow.SetContent(content)
 	myWindow.ShowAndRun()
-
 }
 
 func getGreeting(hour int) string {
