@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fyne.io/fyne/app"
+	"fyne.io/fyne/widget"
+)
 
 func main() {
-	fmt.Println("Hola Mundo")
+	myApp := app.New()
+	myWindow := myApp.NewWindow("Hello fyne!")
+
+	myWindow.SetContent(widget.NewLabel("Hola mundo"))
+	myWindow.ShowAndRun()
 }
